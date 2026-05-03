@@ -1,0 +1,477 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color: #111827;
+  background: #f4f1ea;
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(222, 209, 182, 0.28), transparent 32%),
+    linear-gradient(180deg, #f8f4ec 0%, #f1ede5 100%);
+  color: #161514;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  background: #111111;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  transition: transform 120ms ease, opacity 120ms ease, background 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ghostButton {
+  background: #f7f3eb;
+  color: #161514;
+  border: 1px solid #d7ccbb;
+}
+
+.dangerButton {
+  background: #7f1d1d;
+}
+
+.appShell {
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.hero,
+.panel,
+.statCard {
+  border: 1px solid rgba(72, 56, 34, 0.14);
+  background: rgba(255, 250, 244, 0.86);
+  box-shadow: 0 12px 28px rgba(38, 25, 10, 0.06);
+}
+
+.hero {
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #7c5f39;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.heroCopy,
+.panelHeader p,
+.statCard p,
+.highlightItem p,
+.flowItem p,
+.taskMeta p,
+.resultCopy p,
+.logRow p,
+.emptyState p {
+  color: #615748;
+}
+
+.heroCopy {
+  max-width: 700px;
+  margin: 12px 0 0;
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.heroHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #5a4e3e;
+  font-size: 14px;
+}
+
+.statsGrid,
+.panelGrid,
+.workspaceGrid {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.statsGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.panelGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.workspaceGrid {
+  grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+}
+
+.statCard {
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.statIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #efe5d3;
+  color: #6a4b20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.statLabel {
+  display: block;
+  font-size: 13px;
+  color: #766c5a;
+  margin-bottom: 6px;
+}
+
+.statValue {
+  display: block;
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.panel {
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.panelHeader h2,
+.highlightItem h3 {
+  margin: 0;
+}
+
+.panelHeader p {
+  margin: 6px 0 0;
+}
+
+.highlightList,
+.taskList,
+.logList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlightItem,
+.flowItem,
+.taskRow,
+.logRow,
+.evidenceBlock,
+.emptyState {
+  border: 1px solid rgba(72, 56, 34, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+}
+
+.highlightItem,
+.logRow,
+.evidenceBlock,
+.emptyState {
+  padding: 14px;
+}
+
+.highlightItem p,
+.flowItem p,
+.taskMeta p,
+.logRow p {
+  margin-bottom: 0;
+  line-height: 1.55;
+}
+
+.flowList {
+  display: grid;
+  gap: 12px;
+}
+
+.flowItem {
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 36px 1fr 16px;
+  gap: 12px;
+  align-items: center;
+}
+
+.flowIndex {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #1d1d1d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.flowArrow {
+  color: #978974;
+}
+
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.taskForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #42392d;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d6ccb9;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 12px 13px;
+  color: #161514;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.taskRow {
+  padding: 14px;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.taskMeta strong,
+.logTop strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.taskActions {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.tagRow,
+.logTop {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.statusTag,
+.softTag,
+.levelTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.statusTag,
+.softTag {
+  background: #efe7da;
+  color: #5a4a30;
+}
+
+.statusTag.success,
+.levelTag.info {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.statusTag.running,
+.levelTag.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.statusTag.failed,
+.levelTag.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.resultPanel {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(72, 56, 34, 0.12);
+}
+
+.scoreRing {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #111111;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.resultCopy p {
+  margin: 10px 0 0;
+  line-height: 1.6;
+}
+
+.evidenceBlock {
+  margin-top: 16px;
+}
+
+.evidenceTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #5b4b37;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.evidenceBlock ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #5d5447;
+  line-height: 1.7;
+}
+
+.logList {
+  max-height: 520px;
+  overflow: auto;
+}
+
+.timestamp {
+  display: block;
+  font-size: 12px;
+  color: #8d7f6b;
+  margin-top: 6px;
+}
+
+.emptyState {
+  min-height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .statsGrid,
+  .panelGrid,
+  .workspaceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .heroActions {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 16px 14px 28px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .taskRow,
+  .resultPanel {
+    flex-direction: column;
+  }
+
+  .taskActions {
+    width: 100%;
+  }
+
+  .taskActions button {
+    flex: 1 1 auto;
+  }
+}
